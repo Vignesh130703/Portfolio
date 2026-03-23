@@ -86,18 +86,22 @@ export default function About() {
               className="md:col-span-4 bg-gradient-to-br from-[#111111] to-[#0A0A0A] border border-white/5 rounded-[2.5rem] p-8 aspect-square md:aspect-auto md:h-full relative overflow-hidden group hover:border-brand-blue/30 transition-all flex flex-col justify-center items-center text-center"
             >
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(59,130,246,0.1),transparent_70%)] pointer-events-none"></div>
+<div className="relative w-44 h-44 mb-6 group flex items-center justify-center">
+  
+  <img
+    src="/image.png"
+    alt="Avatar"
+    className="w-full object-contain 
+               drop-shadow-[0_0_25px_rgba(59,130,246,0.5)]
+               group-hover:scale-110 
+               transition duration-500"
+  />
+
+</div>
               
-              <div className="w-32 h-32 mb-6 relative">
-                <div className="absolute inset-0 bg-brand-blue/20 blur-xl rounded-full animate-pulse"></div>
-                <div className="relative w-full h-full bg-[#1A1A1A] border border-white/10 rounded-full flex items-center justify-center shadow-2xl">
-                  {/* Placeholder for actual 3D Avatar Image */}
-                  <span className="text-gray-500 text-xs font-medium uppercase tracking-widest text-center px-4">Upload<br/>Avatar</span>
-                </div>
-              </div>
               
-              <h3 className="text-xl font-bold text-white mb-2">Vignesh</h3>
-              <p className="text-brand-blue text-sm tracking-widest uppercase font-semibold">Creator & Engineer</p>
-            </motion.div>
+              <h1 className="mt-3 text-brand-blue text-sm tracking-widest uppercase font-semibold">Vignesh</h1>            
+              </motion.div>
 
             {/* Stat Row Bento Boxes */}
             <div className="md:col-span-12 grid grid-cols-2 md:grid-cols-4 gap-6">

@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { Activity, Zap, Bell, CheckCircle2, X } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const servicesData = [
   {
@@ -10,6 +10,7 @@ const servicesData = [
     title: "Sports Data API",
     description: "Real-time sports telemetry API delivering instant fixtures, scores, and deep analytics.",
     icon: Activity,
+    
     plans: [
       {
         name: "BASIC PLAN (Starter)",
@@ -17,7 +18,7 @@ const servicesData = [
         bulletColor: "text-green-400",
         tagline: "Perfect for small projects, personal apps, and testing environments.",
         features: ["Access to limited sports data (selected leagues)", "API access with basic endpoints", "Update frequency: Every 60 seconds", "Request limit: 1,000 requests/day", "Email support"],
-        price: "₹499/month"
+        price: "₹49/month"
       },
       {
         name: "PRO PLAN (Most Popular)",
@@ -25,7 +26,7 @@ const servicesData = [
         bulletColor: "text-brand-blue",
         tagline: "Best for growing apps, startups, and production use.",
         features: ["Access to multiple leagues and competitions", "Full API access (scores, fixtures, stats)", "Update frequency: Every 10–15 seconds", "Request limit: 10,000 requests/day", "Priority email support", "Webhook support for real-time updates"],
-        price: "₹1,499/month"
+        price: "₹149/month"
       },
       {
         name: "ENTERPRISE PLAN (Advanced)",
@@ -49,7 +50,7 @@ const servicesData = [
         bulletColor: "text-brand-purple",
         tagline: "Track prices smartly and never miss the right time to buy.",
         features: ["Track products from major e-commerce platforms (Amazon, Flipkart, etc.)", "Instant Telegram notifications when price drops", "Smart alerts based on your target price", "Price history visualization for better decisions", "AI-based suggestion: Buy now or wait for a better deal", "Multiple product tracking (up to 20 items)", "Real-time monitoring"],
-        price: "₹299/month"
+        price: "₹49/month"
       }
     ]
   },
@@ -65,7 +66,7 @@ const servicesData = [
         bulletColor: "text-green-400",
         tagline: "Ideal for small restaurants, local vendors, and early-stage partners.",
         features: ["List surplus food items for rescue", "Basic dashboard to manage listings", "Manual approval and distribution flow", "Limited daily rescue listings", "Email support", "Helps reduce food waste at a local level"],
-        price: "₹499/month"
+        price: "₹19/month"
       },
       {
         name: "PRO PLAN (Business / Scale)",
@@ -73,7 +74,7 @@ const servicesData = [
         bulletColor: "text-brand-purple",
         tagline: "Designed for restaurants, cloud kitchens, and organizations managing higher food volume.",
         features: ["Unlimited food listings and rescue requests", "Automated matching with nearby users/NGOs", "Real-time notifications for pickups", "Advanced dashboard with analytics", "Priority support", "Multi-location support", "Maximize impact while optimizing food distribution"],
-        price: "₹1,499/month"
+        price: "₹99/month"
       }
     ]
   }
@@ -105,6 +106,18 @@ const itemVariants: Variants = {
 
 export default function Services() {
   const [selectedService, setSelectedService] = useState<typeof servicesData[0] | null>(null);
+
+  useEffect(() => {
+  if (selectedService) {
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "auto";
+  }
+
+  return () => {
+    document.body.style.overflow = "auto";
+  };
+}, [selectedService]);
 
   return (
     <section id="services" className="min-h-screen flex flex-col justify-center items-center py-24 relative isolate">

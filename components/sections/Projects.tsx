@@ -49,22 +49,7 @@ export default function Projects({ repos }: { repos: GitHubRepo[] }) {
         )}
       </div>
 
-      <div className="mt-auto flex items-center justify-between pt-4 border-t border-glass relative z-10">
-        <div className="flex items-center text-sm text-gray-500">
-          <Star size={16} className="mr-1 text-yellow-500/70" />
-          {repo.stargazers_count}
-        </div>
-        <div className="flex gap-3 text-sm">
-          {(repo as any).homepage && (
-            <a href={(repo as any).homepage} target="_blank" rel="noopener noreferrer" className="text-white hover:text-brand-purple font-medium transition-colors">
-              Live Demo
-            </a>
-          )}
-          <a href={repo.html_url} target="_blank" rel="noopener noreferrer" className="text-white hover:text-brand-blue font-medium transition-colors">
-            GitHub
-          </a>
-        </div>
-      </div>
+
     </motion.div>
   );
 
