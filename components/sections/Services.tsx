@@ -96,7 +96,7 @@ const itemVariants: Variants = {
     y: 0,
     transition: {
       duration: 0.5,
-      ease: "easeInOut", // keep this OR change below if error persists
+      ease: [0.42, 0, 0.58, 1], // keep this OR change below if error persists
     },
   },
 };
