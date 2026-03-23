@@ -129,7 +129,7 @@ export default function Services() {
               return (
                 <motion.div 
                   key={service.id} 
-                  variants={itemVariants as any} 
+                  variants={itemVariants}
                   className="group relative"
                 >
                   <div className="absolute -inset-0.5 bg-gradient-to-r from-brand-purple to-brand-blue rounded-3xl opacity-0 group-hover:opacity-100 transition duration-500 blur-xl"></div>
